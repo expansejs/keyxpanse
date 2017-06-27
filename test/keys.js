@@ -280,7 +280,7 @@ describe("Private key recovery", function () {
   });
 });
 
-describe("Derive Ethereum address from private key", function () {
+describe("Derive Expanse address from private key", function () {
   var test = function (t) {
     it(t.description + ": " + t.privateKey, function () {
       t.assertions(keythereum.privateKeyToAddress(t.privateKey));

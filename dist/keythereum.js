@@ -7,7 +7,7 @@ global.keythereum = keythereum;
 },{"./":2}],2:[function(require,module,exports){
 (function (process,Buffer){
 /**
- * Create, import, and export ethereum keys.
+ * Create, import, and export expanse keys.
  * @author Jack Peterson (jack@tinybike.net)
  */
 
@@ -150,9 +150,9 @@ module.exports = {
   },
 
   /**
-   * Derive Ethereum address from private key.
+   * Derive Expanse address from private key.
    * @param {buffer|string} privateKey ECDSA private key.
-   * @return {string} Hex-encoded Ethereum address.
+   * @return {string} Hex-encoded Expanse address.
    */
   privateKeyToAddress: function (privateKey) {
     var privateKeyBuffer, publicKey;
@@ -446,7 +446,7 @@ module.exports = {
 
   /**
    * Generate filename for a keystore file.
-   * @param {string} address Ethereum address.
+   * @param {string} address Expanse address.
    * @return {string} Keystore filename.
    */
   generateKeystoreFilename: function (address) {
@@ -473,8 +473,8 @@ module.exports = {
       if (!self.constants.quiet) {
         console.log(
           "Saved to file:\n" + outpath + "\n"+
-          "To use with geth, copy this file to your Ethereum "+
-          "keystore folder (usually ~/.ethereum/keystore)."
+          "To use with gexp, copy this file to your Expanse "+
+          "keystore folder (usually ~/.expanse/keystore)."
         );
       }
     }
@@ -503,8 +503,8 @@ module.exports = {
   /**
    * Import key data object from keystore JSON file.
    * (Note: Node.js only!)
-   * @param {string} address Ethereum address to import.
-   * @param {string=} datadir Ethereum data directory (default: ~/.ethereum).
+   * @param {string} address Expanse address to import.
+   * @param {string=} datadir Expanse data directory (default: ~/.expanse).
    * @param {function=} cb Callback function (optional).
    * @return {Object} Keystore data file's contents.
    */
@@ -527,7 +527,7 @@ module.exports = {
     }
 
     if (this.browser) throw new Error("method only available in Node.js");
-    datadir = datadir || path.join(process.env.HOME, ".ethereum");
+    datadir = datadir || path.join(process.env.HOME, ".expanse");
     keystore = path.join(datadir, "keystore");
     if (!isFunction(cb)) {
       filepath = findKeyfile(keystore, address, fs.readdirSync(keystore));

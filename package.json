@@ -1,7 +1,7 @@
 {
-  "name": "keythereum",
+  "name": "keyxpanse",
   "version": "0.5.2",
-  "description": "Create, import and export Ethereum keys",
+  "description": "Create, import and export Expanse keys",
   "main": "index.js",
   "directories": {
     "test": "test",
@@ -9,22 +9,22 @@
   },
   "scripts": {
     "test": "mocha test/keys.js",
-    "geth": "mocha -R progress test/keys.js && mocha -R progress test/geth.js",
+    "gexp": "mocha -R progress test/keys.js && mocha -R progress test/gexp.js",
     "lint": "eslint index.js && eslint gulpfile.js && eslint test/*.js",
     "coverage": "istanbul cover -x **/lib/** ./node_modules/mocha/bin/_mocha test/keys.js",
-    "build": "browserify ./exports.js > ./dist/keythereum.js && uglifyjs ./dist/keythereum.js > ./dist/keythereum.min.js",
+    "build": "browserify ./exports.js > ./dist/keyxpanse.js && uglifyjs ./dist/keyxpanse.js > ./dist/keyxpanse.min.js",
     "build:tests": "browserify test/keys.js > test/browser/bundle.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ethereumjs/keythereum.git"
+    "url": "git+https://github.com/expansejs/keyxpanse.git"
   },
   "author": "Jack Peterson <jack@tinybike.net>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ethereumjs/keythereum/issues"
+    "url": "https://github.com/expansejs/keyxpanse/issues"
   },
-  "homepage": "https://github.com/ethereumjs/keythereum#readme",
+  "homepage": "https://github.com/expansejs/keyxpanse#readme",
   "dependencies": {
     "keccak": "1.2.0",
     "secp256k1": "3.2.5",
@@ -40,7 +40,7 @@
     "chai": "^3.2.0",
     "coveralls": "^2.11.3",
     "eslint": "^3.17.1",
-    "geth": "^0.2.2",
+    "gexp": "^0.2.2",
     "istanbul": "^0.3.17",
     "mocha": "^2.2.5",
     "uglify-js": "^2.4.24",
